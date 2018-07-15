@@ -15,9 +15,9 @@ Keep in mind this project is still under development.
 
 ## Tasks
 
-[X] Shows on all workspaces
-[X] Square and rounded corners
-[ ] Customization panel
+* [X] Shows on all workspaces
+* [X] Square and rounded corners
+* [ ] Customization panel
 
 ### Modules
 
