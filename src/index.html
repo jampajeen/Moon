@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Noon</title>
+
+    <link rel="stylesheet" href="./static/style.css">
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <div class="left">
+        <div>
+          <p>2</p>
+        </div>
+      </div>
+
+      <div class="center">
+        <div>
+          <p>Sun, July 15</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <div>
+          <p>⬡ 86%</p>
+        </div>
+        <div class="clock">
+          <p></p>
+        </div>
+      </div>
+  </div>
+
+    <!-- <script type="text/javascript" src="./lib/main.js"></script> -->
+    <script type="text/javascript">
+      const clock = document.querySelector('.clock').children[0];
+      function pad(n) { return ('0' + n).slice(-2); }
+      function set() {
+        const t = new Date();
+        clock.innerHTML = `☾ ${pad(t.getHours())}:${pad(t.getMinutes())}:${pad(t.getSeconds())}`;
+      }
+      set();
+      setInterval(() => {
+        set();
+      }, 1000);
+    </script>
+  </body>
+</html>
