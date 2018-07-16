@@ -21,13 +21,14 @@ Keep in mind this project is still under development.
 
 ### Modules
 
-- Power / sleep
+- Power
 - Battery
 - CPU
 - Date
 - Memory
 - Spotify / iTunes
 - Volume
+- Network
 
 ### Customization
 

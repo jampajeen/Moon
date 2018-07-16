@@ -1,14 +1,18 @@
 {
   "name": "Moon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "beautiful menu bars for macOS",
   "main": "./src/index.js",
   "scripts": {
     "start": "electron ."
   },
   "author": "Paco Coursey <paco@pacocoursey.com> (pacocoursey.com)",
+  "repository": "pacocoursey/moon",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "dragscroll": "0.0.8",
+    "fs-extra": "^6.0.1"
+  },
   "devDependencies": {
     "electron": "^2.0.2"
   }

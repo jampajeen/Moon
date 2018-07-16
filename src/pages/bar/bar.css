@@ -12,20 +12,6 @@
   --hover-fg: #232931;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  padding: 0;
-  margin: 0;
-
-  user-select: none;
-  -webkit-user-select: none;
-
-  overflow: hidden;
-}
-
 body {
   height: 100vh;
   width: 100vw;

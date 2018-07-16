@@ -1,0 +1,87 @@
+:root {
+  --white: #e8ecf1;
+  --black: #1e1e1e;
+}
+
+body {
+  color: #1e1e1e;
+  background: #e8ecf1;
+  font-family: -apple-system, BlinkMacSystemFont, 'Lato', sans-serif !important;
+
+  -webkit-app-region: drag;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+section {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  white-space: nowrap;
+
+  transition: all 1s;
+}
+
+.page:not(.active-page) {
+  left: 2000px;
+}
+
+.progress {
+  position: absolute;
+
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress > div {
+  background: none;
+  border-radius: 50%;
+  border: 1px solid var(--black);
+
+  margin: 0 3px;
+
+  width: 10px;
+  height: 10px;
+}
+
+.progress > div:hover {
+  cursor: pointer;
+}
+
+.active-button {
+  background: var(--black) !important;
+}
+
+.finish {
+  padding: 20px 25px;
+  border-radius: 50%;
+  color: var(--black);
+  border: 1px solid var(--black);
+
+  transition: all 200ms;
+}
+
+.finish:hover {
+  cursor: pointer;
+  background: var(--black);
+  color: var(--white);
+  transition: all 200ms;
+}
