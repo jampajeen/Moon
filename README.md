@@ -1,7 +1,7 @@
 # Moon
 
 <p align="center">
-  <img src="screenshot.png">
+  <img src="logo.png">
 </p>
 
 Beautiful, customizable menu bars for macOS. Runs as a standalone application without the need for supporting applications like Ubersicht.
