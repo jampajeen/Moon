@@ -2,9 +2,11 @@
   --bg: #1e1e1e;
   --white: #e8ecf1;
   --black: #1e1e1e;
-  --gray: #606470;
+  --gray: #d0d8e2;
   --gray2: #6c737e;
   --accent: #cdd5e0;
+
+  --time: 200ms;
 }
 
 .wrapper {
@@ -19,10 +21,12 @@
 
   display: grid;
   grid-template-columns: minmax(200px, 20vw) 1fr;
-  grid-template-rows: 1fr minmax(75px, 10vh);
+  grid-template-rows: 1fr minmax(90px, 10vh);
   grid-template-areas: "sidebar main"
                        "sidebar footer";
 }
+
+/* ⬡ ASIDE */
 
 aside {
   grid-area: sidebar;
@@ -39,8 +43,7 @@ aside {
 aside > div {
   -webkit-app-region: no-drag;
 
-  /* Fix corners on dragged element */
-  transform: translate(0, 0);
+  word-wrap: break-word;
 
   font-size: 12px;
   background: var(--white);
@@ -57,7 +60,7 @@ aside > div {
   grid-template-areas: "icon title"
                        "icon description";
 
- transition: all 200ms;
+ transition: all var(--time);
 }
 
 .icon {
@@ -75,6 +78,7 @@ aside > div {
   grid-area: title;
 
   padding-left: 10px;
+  text-transform: capitalize;
   font-weight: bold;
 
   display: flex;
@@ -87,8 +91,6 @@ aside > div {
 
   padding: 5px 10px;
 
-  text-overflow: ellipsis;
-
   display: flex;
   flex-direction: column;
 }
@@ -96,9 +98,11 @@ aside > div {
 aside > div:hover {
   background: var(--black);
   color: var(--white);
-  transition: all 200ms;
+  transition: all var(--time);
   cursor: pointer;
 }
+
+/* ⬡ MAIN */
 
 main {
   grid-area: main;
@@ -110,9 +114,13 @@ main {
   align-items: center;
 }
 
+.widget {
+  display: none;
+}
+
 .screen {
   width: 90%;
-  height: 90%;
+  height: 92%;
 
   border-radius: 10px;
   background: var(--accent);
@@ -128,16 +136,23 @@ main {
   height: 20px;
 
   background: var(--black);
+  color: var(--white);
   border-radius: 10px 10px 0 0;
 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
 }
 
 .menu-bar > span {
-  color: var(--white);
-  padding: 1px 0px 0 8px;
+  padding-left: 8px;
+}
+
+.menu-bar > div {
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .dock {
@@ -187,93 +202,80 @@ main {
   background-color: var(--black);
 }
 
+/* ⬡ FOOTER */
+
 footer {
   -webkit-app-region: no-drag;
 
   grid-area: footer;
   background: var(--white);
+
+  padding: 0 5% 10px 5%;
 }
 
 .footer {
-  margin: 0 5% 5px 5%;
+  height: 100%;
+  width: 100%;
 
   display: grid;
-  grid-template-columns: auto 1fr 100px;
+  grid-template-columns: 1fr 100px;
   grid-template-rows: 1fr;
-  grid-template-areas: "screen-options theme-options other-options";
+  grid-template-areas: "left-options right-options";
 }
 
-.screen-options {
-  grid-area: screen-options;
+.left-options {
+  grid-area: left-options;
+
+  padding: 0 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left-options > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 200px;
+}
+
+.row {
+  flex-direction: row !important;
+}
+
+.column {
+  flex-direction: column !important;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.left-options > div > div:not(.section-title) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-options > div > .section-title {
+  margin-bottom: 5px;
+  font-size: 10px;
+  color: var(--gray2);
+  text-transform: uppercase;
+}
+
+.right-options {
+  grid-area: right-options;
+
+  padding-left: 10px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.screen-options > .button {
-  text-align: center;
-  font-weight: bold;
-  font-size: 8px;
-  color: var(--white);
-  background: var(--black);
-
-  border: none;
-  border-radius: 5px;
-
-  padding: 10px 15px;
-  margin-bottom: 5px;
-
-  transition: all 200ms;
-}
-
-.screen-options > .button:hover {
-  cursor: pointer;
-  transition: all 200ms;
-}
-
-.screen-options > .button:active {
-  box-shadow: 0 0 5px var(--black);
-  transition: all 200ms;
-}
-
-.theme-options {
-  grid-area: theme-options;
-}
-
-.other-options {
-  grid-area: other-options;
-}
-
-.other-options > .button {
-  text-align: center;
-  font-weight: bold;
-  font-size: 12px;
-  color: var(--white);
-  background: var(--black);
-
-  border: none;
-  border-radius: 5px;
-
-  height: 100%;
-  padding: 10px 15px;
-  margin-bottom: 5px;
-
-  transition: all 200ms;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.other-options > .button > p:after {
-  content: 'Launch Bar';
-}
-
-.other-options:hover {
-  cursor: pointer;
-}
-
-.other-options:hover .button > p:after {
-  content: '🚀';
+  align-items: center;
 }

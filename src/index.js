@@ -14,7 +14,7 @@ function createSettingsWindow() {
   win = new BrowserWindow({
     width: 1100,
     height: 550,
-    minWidth: 800,
+    minWidth: 950,
     minHeight: 450,
     frame: false,
     transparent: false,
@@ -36,6 +36,7 @@ function createSettingsWindow() {
     win = null;
   });
 }
+
 function createStartWindow() {
   win = new BrowserWindow({
     width: 600,
@@ -61,6 +62,7 @@ function createStartWindow() {
     win = null;
   });
 }
+
 function createBar(w) {
   bar = new BrowserWindow({
     width: w,

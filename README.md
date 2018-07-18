@@ -21,19 +21,26 @@ Keep in mind this project is still under development.
 
 ### Modules
 
-- Power
+- Applications
 - Battery
 - CPU
-- Date
-- Memory
-- Spotify / iTunes
-- Volume
+- Date & Time
+- Music
 - Network
+- Power
+- Screen
+- Volume
 
 ### Customization
 
-- Module position
-- Font color, size
+- Hide
+- Size (+padding)
+- Position
+- Background color
+- Border (+color, +size)
+- Font (+color, +size, +name)
+- Icon (true/false, custom)
+- Custom CSS embed
 
 #
 

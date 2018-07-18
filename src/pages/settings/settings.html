@@ -6,64 +6,19 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../static/reset.css">
+    <link rel="stylesheet" href="../../static/components.css">
     <link rel="stylesheet" href="./settings.css">
   </head>
   <body>
 
     <div class="wrapper">
-      <aside>
-        <div draggable="true">
-          <div class="icon">💡</div>
-          <div class="title">Power</div>
-          <div class="description">Put your computer to sleep.</div>
-        </div>
-        <div draggable="true">
-          <div class="icon">🔋</div>
-          <div class="title">Battery</div>
-          <div class="description">Display your computer's battery level.</div>
-        </div>
-
-        <div draggable="true">
-          <div class="icon">💾</div>
-          <div class="title">CPU</div>
-          <div class="description">Display current CPU usage.</div>
-        </div>
-
-        <div draggable="true">
-          <div class="icon">📅</div>
-          <div class="title">Date</div>
-          <div class="description">Display the current date.</div>
-        </div>
-
-        <div draggable="true">
-          <div class="icon">🎵</div>
-          <div class="title">Music</div>
-          <div class="description">Display the current song from iTunes or Spotify.</div>
-        </div>
-
-        <div draggable="true">
-          <div class="icon">🔊</div>
-          <div class="title">Volume</div>
-          <div class="description">Display the volume level.</div>
-        </div>
-
-        <div draggable="true">
-          <div class="icon">📶</div>
-          <div class="title">Network</div>
-          <div class="description">Display whether your computer is connected to an internet network.</div>
-        </div>
-
-        <div draggable="true">
-          <div class="icon">🖥</div>
-          <div class="title">App</div>
-          <div class="description">Shortcut to launch an application.</div>
-        </div>
-      </aside>
+      <aside></aside>
 
       <main>
-        <div class="screen">
+        <div class="preview screen">
           <div class="menu-bar">
             <span></span>
+            <div>Moon Preview</div>
           </div>
           <div class="dock center">
             <div></div>
@@ -74,21 +29,22 @@
           </div>
         </div>
       </main>
+
       <footer>
         <div class="footer">
-          <div class="screen-options">
-            <div class="button dock-button">Dock</div>
-            <div class="button menu-button">Menu Bar</div>
-          </div>
-
-          <div class="theme-options">
-
-          </div>
-
-          <div class="other-options">
-            <div class="button launch-button">
-              <p></p>
+          <div class="left-options">
+            <div class="section">
+              <div class="section-title">Preview</div>
+                <div class="checkbox">
+                  <input id="c1" type="checkbox">
+                  <label for="c1">Menu Bar</label>
+                </div>
             </div>
+          </div>
+
+          <div class="right-options">
+            <div class="button save-button">Save</div>
+            <div class="button preview-button">Preview</div>
           </div>
         </div>
       </footer>
@@ -96,6 +52,5 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="./settings.js"></script>
-
   </body>
 </html>

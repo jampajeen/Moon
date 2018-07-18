@@ -1,38 +1,72 @@
-const { ipcRenderer } = require('electron');
+const options = require('../../widgets/options.js');
+const previewOptions = require('../../widgets/preview.js');
+const template = require('../../lib/template.js');
+const widgets = require('../../widgets');
 
-const menu = document.querySelector('.menu-bar');
-const dock = document.querySelector('.dock');
-const menuButton = document.querySelector('.menu-button');
-const dockButton = document.querySelector('.dock-button');
+const aside = document.querySelector('aside');
+const footer = document.querySelector('.footer');
+const preview = document.querySelector('.preview-button');
 
-menuButton.addEventListener('click', () => {
-  if (menu.style.visibility === 'visible' || !menu.style.visibility) {
-    menu.style.visibility = 'hidden';
-  } else {
-    menu.style.visibility = 'visible';
-  }
+const registerListeners = () => {
+  const numInputs = document.querySelectorAll('.input-number');
+  numInputs.forEach((input) => {
+    input.addEventListener('keydown', (e) => {
+      const v = parseInt(String.fromCharCode(e.keyCode), 10);
+      if (Number.isNaN(v) && e.which !== 8 && e.which !== 9) {
+        e.preventDefault();
+        return false;
+      }
+      return true;
+    });
+  });
+
+  const hexInputs = document.querySelectorAll('.input-hex');
+  hexInputs.forEach((input) => {
+    input.addEventListener('keyup', (e) => {
+      const val = e.target.value;
+      const span = e.target.nextElementSibling.nextElementSibling;
+      if (val.match(/^(?:[0-9a-fA-F]{3}){1,2}$/)) {
+        span.style.background = `#${val}`;
+      } else {
+        span.style.background = '#1e1e1e';
+      }
+    });
+  });
+};
+
+const widget = (icon, title, description) => {
+  const html = `
+    <div>
+      <div class="icon">${icon}</div>
+      <div class="title">${title}</div>
+      <div class="description">${description}</div>
+    </div>
+  `;
+
+  const div = template(html);
+
+  div.addEventListener('click', () => {
+    const leftOptions = document.querySelector('.left-options');
+
+    if (leftOptions && leftOptions !== '') leftOptions.remove();
+    footer.prepend(options);
+
+    // Re-register event listeners
+    registerListeners();
+  });
+
+  return div;
+};
+
+// Populate the sidebar with widgets and their information
+Object.values(widgets).forEach((value) => {
+  const d = widget(value.icon, value.name, value.description, value.settings, value.options);
+  aside.appendChild(d);
 });
 
-dockButton.addEventListener('click', () => {
-  const l = dock.classList;
-  // center -> left -> right -> hidden
-  if (l.contains('center')) {
-    l.remove('center');
-    l.add('left');
-  } else if (l.contains('left')) {
-    l.remove('left');
-    l.add('right');
-  } else if (l.contains('right')) {
-    l.remove('right');
-    l.add('hidden');
-  } else if (l.contains('hidden')) {
-    l.remove('hidden');
-    l.add('center');
-  }
-});
+preview.addEventListener('click', () => {
+  const leftOptions = document.querySelector('.left-options');
 
-const launch = document.querySelector('.launch-button');
-
-launch.addEventListener('click', () => {
-  ipcRenderer.send('launchBar');
+  if (leftOptions && leftOptions !== '') leftOptions.remove();
+  footer.prepend(previewOptions);
 });
