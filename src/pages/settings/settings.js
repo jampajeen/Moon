@@ -1,4 +1,4 @@
-const options = require('../../widgets/options.js');
+const Options = require('../../widgets/options.js');
 const previewOptions = require('../../widgets/preview.js');
 const template = require('../../lib/template.js');
 const widgets = require('../../widgets');
@@ -28,7 +28,7 @@ const registerListeners = () => {
       if (val.match(/^(?:[0-9a-fA-F]{3}){1,2}$/)) {
         span.style.background = `#${val}`;
       } else {
-        span.style.background = '#1e1e1e';
+        span.style.background = '#d0d8e2';
       }
     });
   });
@@ -49,7 +49,7 @@ const widget = (icon, title, description) => {
     const leftOptions = document.querySelector('.left-options');
 
     if (leftOptions && leftOptions !== '') leftOptions.remove();
-    footer.prepend(options);
+    footer.prepend(new Options(title));
 
     // Re-register event listeners
     registerListeners();
@@ -70,3 +70,45 @@ preview.addEventListener('click', () => {
   if (leftOptions && leftOptions !== '') leftOptions.remove();
   footer.prepend(previewOptions);
 });
+
+const dropdowns = document.querySelectorAll('.dropdown');
+dropdowns.forEach((d) => {
+  const active = d.querySelector('.dropdown-active');
+  const title = d.querySelector('.dropdown-title');
+  const items = d.querySelectorAll('.dropdown-list > div');
+
+  // When dropdown is clicked, toggle list & icon
+  active.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (d.classList.contains('show')) {
+      d.classList.remove('show');
+    } else {
+      d.classList.add('show');
+    }
+  });
+
+  // When item is clicked, toggle list & icon
+  // and update active selection
+  items.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const name = e.target.innerHTML;
+
+      if (name && name !== '') {
+        d.classList.remove('show');
+        title.innerHTML = name;
+      }
+    });
+  });
+});
+
+function hideDropdowns() {
+  const ds = document.querySelectorAll('.dropdown');
+  ds.forEach((d) => {
+    if (d.classList.contains('show')) {
+      d.classList.remove('show');
+    }
+  });
+}
+
+document.addEventListener('click', hideDropdowns);

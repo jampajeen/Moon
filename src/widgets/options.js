@@ -1,8 +1,9 @@
 const template = require('../lib/template.js');
 
-const footer = () => {
+
+function options(name) {
   const html = `
-  <div class="left-options">
+  <div class="left-options ${name}">
     <div class="section">
       <div class="section-title">Position</div>
       <div class="section-content row">
@@ -84,6 +85,6 @@ const footer = () => {
   `;
 
   return template(html);
-};
+}
 
-module.exports = footer();
+module.exports = options;
