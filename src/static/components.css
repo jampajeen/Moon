@@ -3,7 +3,6 @@
 .checkbox {
   margin-left: 13px;
   padding: 5px;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -12,6 +11,10 @@
 
 .checkbox label {
   cursor: pointer;
+  position: relative;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .checkbox input[type="checkbox"] {
@@ -19,13 +22,11 @@
 }
 
 /* the box */
-.checkbox label::before{
+.checkbox label::before {
   content: "";
   display: inline-block;
-
   height: 10px;
   width: 10px;
-
   border-radius: 2px;
   background: var(--black);
 }
@@ -34,23 +35,13 @@
 .checkbox label::after {
   content: "";
   display: inline-block;
-
   height: 3px;
   width: 7px;
-
   border-radius: 1px;
   border-left: 2px solid var(--white);
   border-bottom: 2px solid var(--white);
-
   transform: rotate(-45deg);
-}
-
-.checkbox label {
-  position: relative;
-
-  font-size: 10px;
-  font-weight: 300;
-  text-transform: uppercase;
+  left: -15px;
 }
 
 .checkbox label::before,
@@ -60,19 +51,13 @@
   top: 1px;
 }
 
-.checkbox label::after {
-  left: -15px;
-}
-
 .checkbox input[type="checkbox"] + label::after {
   opacity: 0;
-
   transition: all var(--time);
 }
 
 .checkbox input[type="checkbox"]:checked + label::after {
   opacity: 1;
-
   transition: all var(--time);
 }
 
@@ -82,7 +67,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   margin: 2px;
 }
 
@@ -91,7 +75,6 @@
   position: relative;
   left: -13px;
   bottom: 1px;
-
   color: var(--gray2);
   text-align: center;
   font-size: 10px;
@@ -111,7 +94,6 @@
   position: relative;
   left: -70px;
   bottom: 1px;
-
   color: var(--gray2);
   text-align: center;
   font-size: 10px;
@@ -125,10 +107,8 @@
 .input-hex + span + div {
   position: relative;
   left: -15px;
-  bottom: 0px;
-
+  bottom: 0;
   border-radius: 50%;
-
   width: 10px;
   height: 10px;
   background: var(--gray);
@@ -136,21 +116,18 @@
 
 input[type="text"] {
   background: none;
-
   border: 0;
   border-bottom: 1px solid var(--gray);
-
   color: var(--black);
   font-size: 10px;
   font-weight: 300;
-
   width: 75px;
   padding: 5px;
-
   transition: all var(--time);
 }
 
-::-webkit-input-placeholder, ::placeholder {
+::-webkit-input-placeholder,
+::placeholder {
   color: var(--gray2);
   transition: all var(--time);
 }
@@ -159,7 +136,6 @@ input[type="text"]:focus {
   outline: none;
   color: var(--black);
   border-bottom: 1px solid var(--black);
-
   transition: all var(--time);
 }
 
@@ -173,49 +149,39 @@ input[type="text"]:focus::-webkit-input-placeholder {
 .button {
   margin: 5px;
   padding: 5px;
-
   color: var(--white);
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 300;
   text-align: center;
-
   width: 100%;
-
   border-radius: 3px;
   border: 1px solid var(--black);
   background: var(--black);
-
   transition: all var(--time);
 }
 
 .button:hover {
   cursor: pointer;
-
   color: var(--black);
   background: var(--white);
   border: 1px solid var(--black);
-
   transition: all var(--time);
 }
 
 /* ⬢ DROPDOWN */
 
 .dropdown {
-  display: inline-block;
-
+  display: inline-block !important;
   margin: 5px;
   width: 100px;
-
   border-radius: 5px;
   border: 1px solid var(--gray);
-
   color: var(--gray2);
   text-transform: uppercase;
   font-size: 10px;
   font-weight: 300;
   text-align: left;
-
   transition: all var(--time);
 }
 
@@ -225,9 +191,9 @@ input[type="text"]:focus::-webkit-input-placeholder {
 
 .dropdown:hover {
   color: var(--black);
+
   /* border: 1px solid var(--black); */
   cursor: pointer;
-
   transition: all var(--time);
 }
 
@@ -240,19 +206,15 @@ input[type="text"]:focus::-webkit-input-placeholder {
 .dropdown-icon {
   display: inline;
   position: relative;
-
   right: 0;
   top: 0;
   width: 0;
   height: 0;
-
   color: var(--white);
-
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
   border-bottom: none;
   border-top: 4px solid var(--gray);
-
   transition: border-color var(--time);
 }
 
@@ -263,7 +225,6 @@ input[type="text"]:focus::-webkit-input-placeholder {
 
 .dropdown-active {
   padding: 5px 10px;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -273,9 +234,7 @@ input[type="text"]:focus::-webkit-input-placeholder {
 .dropdown-items {
   opacity: 0;
   visibility: hidden;
-
   position: relative;
-
   transition: all var(--time);
 }
 
@@ -289,16 +248,12 @@ input[type="text"]:focus::-webkit-input-placeholder {
   top: 100%;
   left: -1px;
   right: 0;
-
   width: calc(100% + 2px);
-
   border-radius: 0 0 5px 5px;
   border: 1px solid var(--gray);
   border-top: none;
-
   color: var(--gray2);
   background-color: var(--white);
-
   transition: all var(--time);
 }
 
@@ -306,16 +261,7 @@ input[type="text"]:focus::-webkit-input-placeholder {
   padding: 10px 10px;
 }
 
-.dropdown-list > div:first-child {
-  /* border-top: 1px solid var(--gray); */
-}
-
-.dropdown-list > div:not(:last-child) {
-  /* border-bottom: 1px solid var(--gray); */
-}
-
 .dropdown-list > div:hover {
   color: var(--black);
-
   transition: all var(--time);
 }

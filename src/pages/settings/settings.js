@@ -1,7 +1,7 @@
-const Options = require('../../widgets/options.js');
-const previewOptions = require('../../widgets/preview.js');
+const Options = require('../../lib/options.js');
+const previewOptions = require('../../lib/preview.js');
 const template = require('../../lib/template.js');
-const widgets = require('../../widgets');
+const modules = require('../../modules');
 
 const aside = document.querySelector('aside');
 const footer = document.querySelector('.footer');
@@ -59,7 +59,7 @@ const widget = (icon, title, description) => {
 };
 
 // Populate the sidebar with widgets and their information
-Object.values(widgets).forEach((value) => {
+Object.values(modules).forEach((value) => {
   const d = widget(value.icon, value.name, value.description, value.settings, value.options);
   aside.appendChild(d);
 });
@@ -70,6 +70,8 @@ preview.addEventListener('click', () => {
   if (leftOptions && leftOptions !== '') leftOptions.remove();
   footer.prepend(previewOptions);
 });
+
+// Dropdown interaction
 
 const dropdowns = document.querySelectorAll('.dropdown');
 dropdowns.forEach((d) => {

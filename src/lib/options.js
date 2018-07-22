@@ -1,6 +1,5 @@
 const template = require('../lib/template.js');
 
-
 function options(name) {
   const html = `
   <div class="left-options ${name}">

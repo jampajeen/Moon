@@ -3,11 +3,9 @@
   --left-bg: #feb062;
   --center-bg: #3f3b3b;
   --right-bg: #e7b3b3;
-
   --left-fg: #575151;
   --center-fg: #feb062;
   --right-fg: #3f3b3b;
-
   --hover-bg: #ffa96a;
   --hover-fg: #232931;
 }
@@ -17,10 +15,8 @@ body {
   width: 100vw;
   min-height: 100vh;
   min-width: 100vw;
-
   font-size: 12px;
-  font-family: "Consolas";
-
+  font-family: monospace;
   background: #1e1e1e;
   color: #fff;
 }
@@ -30,14 +26,15 @@ body {
   width: 100vw;
   min-height: 100vh;
   min-width: 100vw;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.left, .right, .center {
+.left,
+.right,
+.center {
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -45,20 +42,25 @@ body {
   align-items: center;
 }
 
-.left div, .right div, .center div {
+.left div,
+.right div,
+.center div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   height: 100%;
   padding: 0 20px;
 }
 
-.left div p, .right div p, .center div p {
+.left div p,
+.right div p,
+.center div p {
   line-height: 1.5em;
 }
 
-.left div:hover, .right div:hover, .center div:hover {
+.left div:hover,
+.right div:hover,
+.center div:hover {
   background: var(--hover-bg);
   color: var(--hover-fg);
   cursor: pointer;
