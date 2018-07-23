@@ -8,6 +8,10 @@
   --time: 200ms;
 }
 
+.hide {
+  visibility: hidden;
+}
+
 .wrapper {
   -webkit-app-region: drag;
   height: 100vh;
@@ -16,8 +20,8 @@
   min-width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   display: grid;
-  grid-template-columns: minmax(200px, 20vw) 1fr;
-  grid-template-rows: 1fr minmax(90px, 10vh);
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr 90px;
   grid-template-areas:
     "sidebar main"
     "sidebar footer";
@@ -87,6 +91,10 @@ aside > div:hover {
   flex-direction: column;
 }
 
+.active {
+  background: var(--gray);
+}
+
 /* ⬡ MAIN */
 
 main {
@@ -136,9 +144,6 @@ main {
   height: 100%;
   background: none;
   display: flex;
-}
-
-.center {
   flex-direction: row !important;
   justify-content: center;
   align-items: flex-end;
@@ -151,6 +156,8 @@ main {
   height: 16px;
   background-color: var(--black);
 }
+
+/* ⬢ WIDGET SETTINGS */
 
 .settings {
   width: 90%;
@@ -165,8 +172,7 @@ main {
 .widget-preview {
   height: 30%;
   width: 100%;
-  border-radius: 5px;
-  background: var(--gray);
+  border-bottom: 1px solid var(--gray);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -189,7 +195,7 @@ main {
 }
 
 .widget-title {
-  margin: 10px 0;
+  margin: 20px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -204,15 +210,23 @@ main {
 }
 
 .widget-settings {
-  margin-top: 10px;
   width: 100%;
   height: 100%;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.widget-settings-left,
+.widget-settings-right {
+  width: 50%;
+}
+
+.widget-settings-left {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: stretch;
 }
 
 /* ⬡ FOOTER */
@@ -225,62 +239,45 @@ footer {
 }
 
 .footer {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 100px;
-  grid-template-rows: 1fr;
-  grid-template-areas: "left-options right-options";
+  display: flex;
 }
 
-.left-options {
+.options {
   grid-area: left-options;
   padding: 0 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
-.left-options > div {
+.section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   max-width: 200px;
-}
-
-.row {
-  flex-direction: row !important;
 }
 
 .column {
   flex-direction: column !important;
 }
 
-.align-right {
-  text-align: right;
+.flex-start {
+  align-items: flex-start !important;
 }
 
-.left-options > div > div:not(.section-title) {
+.section-content {
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.left-options > div > .section-title {
+.section-title {
   margin-bottom: 5px;
   font-size: 10px;
   color: var(--gray2);
   text-transform: uppercase;
-}
-
-.right-options {
-  grid-area: right-options;
-  padding-left: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
