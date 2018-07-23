@@ -7,90 +7,103 @@ const description = 'Display your computer\'s battery level.';
 const options = `
 <div class="options ${name}">
   <div class="section">
-    <div class="section-title">Position</div>
-    <div class="section-content row">
-      <div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
-          <span></span>
+    <div>
+      <div class="section-title">Position</div>
+      <div class="section-content row">
+        <div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
+            <span></span>
+          </div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
+            <span></span>
+          </div>
         </div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
-          <span></span>
-        </div>
-      </div>
-      <div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
-          <span></span>
-        </div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
-          <span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Size</div>
-    <div class="section-content column">
-      <div class="input">
-        <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="width">
-        <span></span>
-      </div>
-      <div class="input">
-        <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="height">
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-title">Padding</div>
-    <div class="section-content row">
-      <div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
-          <span></span>
-        </div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
-          <span></span>
-        </div>
-      </div>
-      <div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
-          <span></span>
-        </div>
-        <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
-          <span></span>
+        <div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
+            <span></span>
+          </div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="section">
-    <div class="section-title">Font</div>
-    <div class="section-content column">
-      <div class="input">
-        <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="size">
-        <span></span>
-      </div>
-      <div class="input">
-        <input class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
-        <span></span>
-        <div></div>
+    <div>
+      <div class="section-title">Size</div>
+      <div class="section-content column">
+        <div class="input">
+          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="width">
+          <span></span>
+        </div>
+        <div class="input">
+          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="height">
+          <span></span>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <div class="section-title">Widget</div>
-    <div class="section-content column">
-      <div class="button">Update</div>
-      <div class="button">Save</div>
+    <div>
+      <div class="section-title">Padding</div>
+      <div class="section-content row">
+        <div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
+            <span></span>
+          </div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
+            <span></span>
+          </div>
+        </div>
+        <div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
+            <span></span>
+          </div>
+          <div class="input">
+            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
+            <span></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="section">
+    <div>
+      <div class="section-title">Font</div>
+      <div class="section-content column">
+        <div class="input">
+          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="size">
+          <span></span>
+        </div>
+        <div class="input">
+          <input class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
+          <span></span>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div>
+      <div class="section-title">Widget</div>
+      <div class="section-content column">
+        <div class="button">Update</div>
+        <div class="button">Save</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 `;
 
@@ -227,7 +240,6 @@ const settings = `
 `;
 
 const state = {
-  default: true,
   display: true,
   position: {
     top: 0,
