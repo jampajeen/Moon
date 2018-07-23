@@ -37,10 +37,13 @@ const options = `
   </div>
 
   <div class="section">
-    <div class="section-title">Preview</div>
+    <div class="section-title">Bar</div>
     <div class="section-content column">
+      <div class="checkbox">
+        <input id="bar-c" type="checkbox" checked>
+        <label for="bar-c">Display</label>
+      </div>
       <div class="button save-button">Update</div>
-      <div class="button preview-button">Show Bar</div>
     </div>
   </div>
 
@@ -55,7 +58,7 @@ const options = `
 `;
 
 const state = {
-  default: true,
+  // default: true,
 };
 
 const Preview = new Widget(

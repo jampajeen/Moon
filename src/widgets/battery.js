@@ -103,39 +103,116 @@ const settings = `
     </div>
   </div>
 
-  <div class="widget-title">
-    <h1>Battery</h1>
-    <div class="checkbox">
-      <input id="c1" type="checkbox" checked>
-      <label for="c1">Display</label>
-    </div>
-  </div>
-
   <div class="widget-settings">
     <div class="widget-settings-left">
-      <div class="setting">
-        <span>Font:</span>
-        <div class="dropdown">
-          <div class="dropdown-active">
-            <div class="dropdown-title">select</div>
-            <span class="dropdown-icon down"></span>
+
+      <!-- <div class="widget-title">
+        <h1>Battery</h1>
+        <div class="checkbox">
+          <input id="c1" type="checkbox" checked>
+          <label for="c1">Display</label>
+        </div>
+      </div> -->
+
+      <div class="table">
+        <div class="table-row header">
+          <div>Setting</div>
+          <div></div>
+          <div>Value</div>
+        </div>
+
+        <div class="table-row separator">
+          <div>General</div>
+        </div>
+
+        <div class="table-row">
+          <div>Font</div>
+          <div>
+            <div class="checkbox alone">
+              <input id="c11" type="checkbox" checked>
+              <label for="c11">Enabled</label>
+            </div>
           </div>
-          <div class="dropdown-items">
-            <div class="dropdown-list">
-              <div>Select</div>
-              <div>Arial</div>
-              <div>Monaco</div>
-              <div>Hack</div>
-              <div>Futura</div>
-              <div>Helvetica</div>
+          <div>
+            <div class="dropdown">
+              <div class="dropdown-active">
+                <div class="dropdown-title">select</div>
+                <span class="dropdown-icon down"></span>
+              </div>
+              <div class="dropdown-items">
+                <div class="dropdown-list">
+                  <div>Select</div>
+                  <div>Arial</div>
+                  <div>Monaco</div>
+                  <div>Hack</div>
+                  <div>Futura</div>
+                  <div>Helvetica</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="setting">
-        <span>Icon:</span>
-        <input type="text" name="" value="">
+        <div class="table-row separator">
+          <div>Border</div>
+        </div>
+
+        <div class="table-row">
+          <div>Color</div>
+          <div>
+            <div class="checkbox alone">
+              <input id="c11" type="checkbox" checked>
+              <label for="c11">Enabled</label>
+            </div>
+          </div>
+          <div>
+            <div class="input">
+              <input class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
+              <span></span>
+              <div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div>Size</div>
+          <div>
+            <div class="checkbox alone">
+              <input id="c11" type="checkbox" checked>
+              <label for="c11">Enabled</label>
+            </div>
+          </div>
+          <div>
+            <div class="input">
+              <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-row separator">
+          <div>Background</div>
+        </div>
+
+        <div class="table-row">
+          <div>Color</div>
+          <div>
+            <div class="checkbox alone">
+              <input id="c11" type="checkbox" checked>
+              <label for="c11">Enabled</label>
+            </div>
+          </div>
+          <div>
+            <div class="input">
+              <input class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
+              <span></span>
+              <div></div>
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
     </div>
 
@@ -150,6 +227,7 @@ const settings = `
 `;
 
 const state = {
+  default: true,
   display: true,
   position: {
     top: 0,

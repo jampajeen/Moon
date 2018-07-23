@@ -1,12 +1,17 @@
 /* ⬢ CHECKBOX */
 
 .checkbox {
+  -webkit-app-region: no-drag;
   margin-left: 13px;
   padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.checkbox.alone {
+  padding: 0;
 }
 
 .checkbox label {
@@ -84,6 +89,7 @@
 
 .input-number + span::after {
   content: "px";
+  text-transform: lowercase !important;
 }
 
 /* Hex input */
@@ -148,7 +154,7 @@ input[type="text"]:focus::-webkit-input-placeholder {
 /* ⬢ BUTTON */
 
 .button {
-  -webkit-app-region: drag;
+  -webkit-app-region: no-drag;
   margin: 2px;
   padding: 5px;
   color: var(--white);
@@ -233,6 +239,7 @@ input[type="text"]:focus::-webkit-input-placeholder {
 }
 
 .dropdown-items {
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
   position: relative;
@@ -245,6 +252,7 @@ input[type="text"]:focus::-webkit-input-placeholder {
 }
 
 .dropdown-list {
+  z-index: 2;
   position: absolute;
   top: 100%;
   left: -1px;
@@ -254,7 +262,7 @@ input[type="text"]:focus::-webkit-input-placeholder {
   border: 1px solid var(--gray);
   border-top: none;
   color: var(--gray2);
-  background-color: var(--white);
+  background: var(--white);
   transition: all var(--time);
 }
 
