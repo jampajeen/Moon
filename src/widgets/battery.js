@@ -12,21 +12,21 @@ const options = `
       <div class="section-content row">
         <div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
+            <input name="position-top" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
             <span></span>
           </div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
+            <input name="position-bottom" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
             <span></span>
           </div>
         </div>
         <div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
+            <input name="position-left" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
             <span></span>
           </div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
+            <input name="position-right" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
             <span></span>
           </div>
         </div>
@@ -38,11 +38,11 @@ const options = `
       <div class="section-title">Size</div>
       <div class="section-content column">
         <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="width">
+          <input name="size-width" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="width">
           <span></span>
         </div>
         <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="height">
+          <input name="size-height" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="height">
           <span></span>
         </div>
       </div>
@@ -55,21 +55,21 @@ const options = `
       <div class="section-content row">
         <div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
+            <input name="padding-top" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
             <span></span>
           </div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
+            <input name="padding-bottom" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
             <span></span>
           </div>
         </div>
         <div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
+            <input name="padding-left" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
             <span></span>
           </div>
           <div class="input">
-            <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
+            <input name="padding-right" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
             <span></span>
           </div>
         </div>
@@ -82,11 +82,11 @@ const options = `
       <div class="section-title">Font</div>
       <div class="section-content column">
         <div class="input">
-          <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="size">
+          <input name="font-size" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="size">
           <span></span>
         </div>
         <div class="input">
-          <input class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
+          <input name="font-color" class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
           <span></span>
           <div></div>
         </div>
@@ -98,8 +98,8 @@ const options = `
     <div>
       <div class="section-title">Widget</div>
       <div class="section-content column">
-        <div class="button">Update</div>
-        <div class="button">Save</div>
+        <div class="button update">Update</div>
+        <div class="button save">Save</div>
       </div>
     </div>
   </div>
@@ -111,32 +111,17 @@ const options = `
 const settings = `
 <div class="settings">
   <div class="widget-preview">
-    <div>
-      68%
-    </div>
+    <div>68%</div>
   </div>
 
   <div class="widget-settings">
     <div class="widget-settings-left">
 
-      <!-- <div class="widget-title">
+      <div class="widget-title">
         <h1>Battery</h1>
-        <div class="checkbox">
-          <input id="c1" type="checkbox" checked>
-          <label for="c1">Display</label>
-        </div>
-      </div> -->
+      </div>
 
       <div class="table">
-        <div class="table-row header">
-          <div>Setting</div>
-          <div></div>
-          <div>Value</div>
-        </div>
-
-        <div class="table-row separator">
-          <div>General</div>
-        </div>
 
         <div class="table-row">
           <div>Font</div>
@@ -149,7 +134,7 @@ const settings = `
           <div>
             <div class="dropdown">
               <div class="dropdown-active">
-                <div class="dropdown-title">select</div>
+                <div class="dropdown-title" data-name="">select</div>
                 <span class="dropdown-icon down"></span>
               </div>
               <div class="dropdown-items">
@@ -166,12 +151,8 @@ const settings = `
           </div>
         </div>
 
-        <div class="table-row separator">
-          <div>Border</div>
-        </div>
-
         <div class="table-row">
-          <div>Color</div>
+          <div>Border Color</div>
           <div>
             <div class="checkbox alone">
               <input id="c11" type="checkbox" checked>
@@ -180,7 +161,7 @@ const settings = `
           </div>
           <div>
             <div class="input">
-              <input class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
+              <input name="border-color" class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
               <span></span>
               <div></div>
             </div>
@@ -188,7 +169,7 @@ const settings = `
         </div>
 
         <div class="table-row">
-          <div>Size</div>
+          <div>Border Size</div>
           <div>
             <div class="checkbox alone">
               <input id="c11" type="checkbox" checked>
@@ -197,18 +178,14 @@ const settings = `
           </div>
           <div>
             <div class="input">
-              <input class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
+              <input name="border-size" class="input-number" type="text" pattern="\\d{4}" maxlength="4">
               <span></span>
             </div>
           </div>
         </div>
 
-        <div class="table-row separator">
-          <div>Background</div>
-        </div>
-
         <div class="table-row">
-          <div>Color</div>
+          <div>Background Color</div>
           <div>
             <div class="checkbox alone">
               <input id="c11" type="checkbox" checked>
@@ -217,24 +194,23 @@ const settings = `
           </div>
           <div>
             <div class="input">
-              <input class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
+              <input name="bg-color" class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
               <span></span>
               <div></div>
             </div>
           </div>
         </div>
-
-
 
       </div>
     </div>
 
-    <div class="widget-settings-right">
+    <!-- <div class="widget-settings-right">
       <div class="textarea">
         <span>Custom CSS</span>
         <textarea></textarea>
       </div>
-    </div>
+    </div> -->
+
   </div>
 </div>
 `;

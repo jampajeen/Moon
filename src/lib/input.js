@@ -53,6 +53,7 @@ const registerListeners = () => {
         if (name && name !== '') {
           d.classList.remove('show');
           title.innerHTML = name;
+          title.setAttribute('data-name', name);
         }
       });
     });
@@ -86,6 +87,63 @@ const registerListeners = () => {
   if (dockCheckbox) {
     dockCheckbox.addEventListener('click', () => {
       showHide('.dock');
+    });
+  }
+
+  // update button
+  const update = document.querySelector('.update');
+  if (update) {
+    update.addEventListener('click', () => {
+      const state = {
+        position: {
+          top: document.querySelector('input[name="position-top"]').value,
+          bottom: document.querySelector('input[name="position-bottom"]').value,
+          left: document.querySelector('input[name="position-left"]').value,
+          right: document.querySelector('input[name="position-right"]').value,
+        },
+        size: {
+          width: document.querySelector('input[name="size-width"]').value,
+          height: document.querySelector('input[name="size-height"]').value,
+        },
+        padding: {
+          top: document.querySelector('input[name="padding-top"]').value,
+          bottom: document.querySelector('input[name="padding-bottom"]').value,
+          left: document.querySelector('input[name="padding-left"]').value,
+          right: document.querySelector('input[name="padding-right"]').value,
+        },
+        font: {
+          size: document.querySelector('input[name="font-size"]').value,
+          color: document.querySelector('input[name="font-color"]').value,
+          name: document.querySelector('.dropdown-title').getAttribute('data-name'),
+        },
+        border: {
+          size: document.querySelector('input[name="border-size"]').value,
+          color: document.querySelector('input[name="border-color"]').value,
+        },
+        background: document.querySelector('input[name="bg-color"]').value,
+        // css: document.querySelector('textarea').value,
+      };
+
+      // TODO: save this to widget configuration file
+
+      const p = document.querySelector('.widget-preview > div');
+      p.style.paddingTop = `${state.padding.top}px`;
+      p.style.paddingBottom = `${state.padding.bottom}px`;
+      p.style.paddingLeft = `${state.padding.left}px`;
+      p.style.paddingRight = `${state.padding.right}px`;
+
+      p.style.width = `${state.size.width}px`;
+      p.style.height = `${state.size.height}px`;
+
+      p.style.fontSize = `${state.font.size}px`;
+      p.style.color = `#${state.font.color}`;
+      p.style.fontFamily = state.font.name;
+
+      p.style.borderWidth = `${state.border.size}px`;
+      p.style.borderStyle = 'solid';
+      p.style.borderColor = `#${state.border.color}`;
+
+      p.style.background = `#${state.background}`;
     });
   }
 };
