@@ -1,7 +1,8 @@
+const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'applications';
-const icon = '⌨️';
+const icon = feather.icons.menu.toSvg({ width: 10, height: 10 });
 const description = 'Shortcut to launch an application.';
 
 const settings = '';

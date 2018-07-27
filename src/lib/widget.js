@@ -7,6 +7,11 @@ const footer = document.querySelector('footer');
 
 let active = '';
 
+function activate(div) {
+  document.querySelectorAll('.active').forEach((el) => { el.classList.remove('active'); })
+  div.classList.add('active');
+}
+
 class Widget {
   constructor(name, icon, description, options, settings, state) {
     this.name = name;
@@ -29,7 +34,6 @@ class Widget {
       <div>
         <div class="icon">${this.icon}</div>
         <div class="title">${this.name}</div>
-        <div class="description">${this.description}</div>
       </div>
     `;
 
@@ -38,6 +42,7 @@ class Widget {
 
     div.addEventListener('click', () => {
       if (active !== this.name) {
+        activate(div.children[1]);
         main.innerHTML = this.settings;
         footer.innerHTML = this.options;
         registerListeners();
@@ -47,6 +52,7 @@ class Widget {
     });
 
     if (this.state.default === true) {
+      activate(div.children[1]);
       main.innerHTML = this.settings;
       footer.innerHTML = this.options;
       registerListeners();

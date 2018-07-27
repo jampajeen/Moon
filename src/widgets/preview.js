@@ -1,7 +1,8 @@
+const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'preview';
-const icon = '☾';
+const icon = feather.icons.moon.toSvg({ width: 10, height: 10 });
 const description = 'Preview your current bar.';
 
 const settings = `
@@ -21,7 +22,6 @@ const settings = `
 `;
 
 const options = `
-<div class="options">
   <div class="section">
     <div>
       <div class="section-title">Preview</div>
@@ -60,7 +60,6 @@ const options = `
       </div>
     </div>
   </div>
-</div>
 `;
 
 const state = {

@@ -1,7 +1,8 @@
+const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'date';
-const icon = '📅';
+const icon = feather.icons.calendar.toSvg({ width: 10, height: 10 });
 const description = 'Display the current date and time.';
 
 const settings = '';

@@ -10,6 +10,7 @@
   "repository": "pacocoursey/moon",
   "license": "MIT",
   "dependencies": {
+    "feather-icons": "^4.7.3",
     "fs-extra": "^6.0.1"
   },
   "devDependencies": {

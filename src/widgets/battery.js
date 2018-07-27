@@ -1,11 +1,11 @@
+const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'battery';
-const icon = '🔋';
+const icon = feather.icons.battery.toSvg({ width: 10, height: 10 });
 const description = 'Display your computer\'s battery level.';
 
 const options = `
-<div class="options ${name}">
   <div class="section">
     <div>
       <div class="section-title">Position</div>
@@ -103,10 +103,7 @@ const options = `
       </div>
     </div>
   </div>
-
-</div>
 `;
-
 
 const settings = `
 <div class="settings">

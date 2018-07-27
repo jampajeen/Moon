@@ -1,7 +1,8 @@
+const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'volume';
-const icon = '🔊';
+const icon = feather.icons['volume-2'].toSvg({ width: 10, height: 10 });
 const description = 'Display the volume level.';
 
 const settings = '';
