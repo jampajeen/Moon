@@ -3,7 +3,6 @@ const path = require('path');
 const url = require('url');
 const home = require('os').homedir();
 const fs = require('fs-extra');
-const first = require('first-run');
 
 const { app, BrowserWindow, ipcMain } = electron;
 
