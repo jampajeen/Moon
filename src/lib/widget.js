@@ -8,7 +8,7 @@ const footer = document.querySelector('footer');
 let active = '';
 
 function activate(div) {
-  document.querySelectorAll('.active').forEach((el) => { el.classList.remove('active'); })
+  document.querySelectorAll('.active').forEach((el) => { el.classList.remove('active'); });
   div.classList.add('active');
 }
 
