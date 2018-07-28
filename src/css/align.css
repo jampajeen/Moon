@@ -1,0 +1,40 @@
+.align-buttons {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  border: 1px solid var(--gray-2);
+  border-radius: 3px;
+  height: 25px;
+}
+
+.align-buttons:hover {
+  cursor: pointer;
+}
+
+.align-buttons > div {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.align-buttons > div:active {
+  background: var(--gray-1);
+}
+
+.align-buttons > div.selected > svg {
+  color: var(--fg);
+}
+
+.align-buttons > div > svg {
+  transition: color var(--time);
+}
+
+.align-buttons > div:hover > svg {
+  color: var(--fg);
+  transition: color var(--time);
+}

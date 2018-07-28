@@ -63,7 +63,7 @@ const options = `
 `;
 
 const state = {
-  default: true,
+  // default: true,
 };
 
 const Preview = new Widget(

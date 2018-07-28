@@ -1,0 +1,31 @@
+button {
+  height: 25px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid var(--gray-2);
+  background: var(--white);
+  color: var(--gray-3);
+  outline: none;
+  transition: background, color var(--time);
+}
+
+button > * {
+  color: var(--gray-3);
+  transition: color var(--time);
+}
+
+button:hover,
+button:hover > *,
+button:focus-within {
+  color: var(--fg);
+  transition: color var(--time);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  background: var(--gray-1);
+  transition: background var(--time);
+}

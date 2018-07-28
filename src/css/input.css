@@ -1,0 +1,58 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content > div {
+  background: var(--white);
+}
+
+.input-text {
+  position: relative;
+  width: 60px;
+}
+
+.input-text.small {
+  width: 30px;
+}
+
+.input-text.small > input {
+  font-size: 8px;
+  width: 30px;
+}
+
+.input-text.small > span {
+  top: 8px;
+  font-size: 8px;
+}
+
+.input-text > input {
+  font-family: "SF Mono", monospace;
+  background: none;
+  color: var(--fg);
+  border: 1px solid var(--gray-2);
+  border-radius: 3px;
+  width: 60px;
+  height: 25px;
+  outline: none;
+  padding: 5px 13px 5px 5px;
+  transition: border var(--time);
+}
+
+.input-text > input:focus {
+  border: 1px solid var(--fg);
+  transition: border var(--time);
+}
+
+.input-text > span {
+  font-family: "SF Mono", monospace;
+  color: var(--gray-3);
+  font-size: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  top: 7px;
+  right: 6px;
+}
