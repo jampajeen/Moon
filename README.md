@@ -15,34 +15,47 @@ $ npm start
 
 Keep in mind this project is still under development.
 
-## Tasks
+## Widgets
 
-* [X] Shows on all workspaces
-* [X] Square and rounded corners
-* [ ] Customization panel
+* [ ] Applications
+* [ ] Battery
+* [ ] CPU
+* [ ] Date & Time
+* [ ] Music
+* [ ] Network
+* [ ] Power
+* [ ] Screen
+* [ ] Volume
 
-### Modules
+### UI
 
-- Applications
-- Battery
-- CPU
-- Date & Time
-- Music
-- Network
-- Power
-- Screen
-- Volume
+* [X] Select Menu
+* [X] Segmented Control
+* [X] Text Input
+* [X] Buttons
+* [X] Checkbox
+* [ ] Alert
 
-### Customization
+### Settings
 
-- Hide
-- Size (+padding)
-- Position
-- Background color
-- Border (+color, +size)
-- Font (+color, +size, +name)
-- Icon (true/false, custom)
-- Custom CSS embed
+* [ ] Corners (square/round)
+* [ ] Resizable
+* [ ] Always on top
+* [ ] Focusable
+* [ ] Shadow
+* [ ] Display on all desktops
+
+### Options
+
+* [ ] Hide
+* [ ] Position
+* [ ] Size
+* [ ] Background color
+* [ ] Typeface
+* [ ] Text Alignment
+* [ ] Font size & color
+* [ ] Border (+color, +size)
+* [ ] Icon (true/false, custom)
 
 #
 

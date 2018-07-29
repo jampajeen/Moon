@@ -2,225 +2,164 @@ const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'battery';
-const icon = feather.icons.battery.toSvg({ width: 10, height: 10 });
+const icon = feather.icons.battery.toSvg();
 const description = 'Display your computer\'s battery level.';
 
 const options = `
-  <div class="section">
-    <div>
-      <div class="section-title">Position</div>
-      <div class="section-content row">
-        <div>
-          <div class="input">
-            <input name="position-top" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
-            <span></span>
-          </div>
-          <div class="input">
-            <input name="position-bottom" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
-            <span></span>
-          </div>
-        </div>
-        <div>
-          <div class="input">
-            <input name="position-left" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
-            <span></span>
-          </div>
-          <div class="input">
-            <input name="position-right" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
-            <span></span>
-          </div>
-        </div>
+
+<div class="section">
+  <div class="label">Battery</div>
+  <div class="content">
+    <div class="checkbox">
+      <input id="battery-c" type="checkbox" checked>
+      <label for="battery-c">
+        <span>Display</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="hr"></div>
+</div>
+
+<div class="section">
+  <div class="label">Position</div>
+  <div class="content">
+    <div class="input-text">
+      <input type="text" maxlength="4">
+      <span>X</span>
+    </div>
+    <div class="input-text">
+      <input type="text" maxlength="4">
+      <span>Y</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="label">Size</div>
+  <div class="content">
+    <div class="input-text">
+      <input type="text" maxlength="4">
+      <span>W</span>
+    </div>
+    <div class="input-text">
+      <input type="text" maxlength="4">
+      <span>H</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="label">Fill</div>
+  <div class="content">
+    <div class="input-text">
+      <input type="text" maxlength="6">
+      <span>#</span>
+    </div>
+    <div class="input-text">
+      <input type="text" maxlength="6">
+      <span>%</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="hr"></div>
+</div>
+
+<div class="section">
+  <div class="label">Typeface</div>
+  <div class="content">
+    <div class="dropdown">
+      <select>
+        <option value="one">San Francisco</option>
+        <option value="two">Hack</option>
+        <option value="three">Arial</option>
+        <option value="three">Arial</option>
+        <option value="three">Arial</option>
+        <option value="three">Arial</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="label">Align</div>
+  <div class="content">
+    <div class="segmented-control">
+      <div class="align-left">
+        ${feather.icons['align-left'].toSvg()}
+      </div>
+      <div class="align-center selected">
+      ${feather.icons['align-center'].toSvg()}
+      </div>
+      <div class="align-right">
+      ${feather.icons['align-right'].toSvg()}
       </div>
     </div>
   </div>
-  <div class="section">
-    <div>
-      <div class="section-title">Size</div>
-      <div class="section-content column">
-        <div class="input">
-          <input name="size-width" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="width">
-          <span></span>
-        </div>
-        <div class="input">
-          <input name="size-height" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="height">
-          <span></span>
-        </div>
-      </div>
+</div>
+
+<div class="section">
+  <div class="label">Font</div>
+  <div class="content">
+    <div class="input-text">
+      <input type="text" maxlength="4">
+      <span>PX</span>
+    </div>
+    <div class="input-text">
+      <input type="text" maxlength="6">
+      <span>#</span>
     </div>
   </div>
+</div>
 
-  <div class="section">
-    <div>
-      <div class="section-title">Padding</div>
-      <div class="section-content row">
-        <div>
-          <div class="input">
-            <input name="padding-top" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="top">
-            <span></span>
-          </div>
-          <div class="input">
-            <input name="padding-bottom" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="bottom">
-            <span></span>
-          </div>
-        </div>
-        <div>
-          <div class="input">
-            <input name="padding-left" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="left">
-            <span></span>
-          </div>
-          <div class="input">
-            <input name="padding-right" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="right">
-            <span></span>
-          </div>
-        </div>
-      </div>
+<div class="section">
+  <div class="hr"></div>
+</div>
+
+<div class="section">
+  <div class="label">Border</div>
+  <div class="content">
+    <div class="input-text">
+      <input type="text" maxlength="4">
+      <span>PX</span>
+    </div>
+    <div class="input-text">
+      <input type="text" maxlength="6">
+      <span>#</span>
     </div>
   </div>
+</div>
 
-  <div class="section">
-    <div>
-      <div class="section-title">Font</div>
-      <div class="section-content column">
-        <div class="input">
-          <input name="font-size" class="input-number" type="text" pattern="\\d{4}" maxlength="4" placeholder="size">
-          <span></span>
-        </div>
-        <div class="input">
-          <input name="font-color" class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
-          <span></span>
-          <div></div>
-        </div>
-      </div>
+<div class="section">
+  <div class="label">Radius</div>
+  <div class="content">
+    <div class="input-text small">
+      <input type="text" maxlength="2" placeholder="TL">
+      <span></span>
     </div>
-  </div>
-
-  <div class="section">
-    <div>
-      <div class="section-title">Widget</div>
-      <div class="section-content column">
-        <div class="button update">Update</div>
-        <div class="button save">Save</div>
-      </div>
+    <div class="input-text small">
+      <input type="text" maxlength="2" placeholder="TR">
+      <span></span>
     </div>
-  </div>
-`;
-
-const settings = `
-<div class="settings">
-  <div class="widget-preview">
-    <div>68%</div>
-  </div>
-
-  <div class="widget-settings">
-    <div class="widget-settings-left">
-
-      <div class="widget-title">
-        <h1>Battery</h1>
-      </div>
-
-      <div class="table">
-
-        <div class="table-row">
-          <div>Font</div>
-          <div>
-            <div class="checkbox alone">
-              <input id="c11" type="checkbox" checked>
-              <label for="c11">Enabled</label>
-            </div>
-          </div>
-          <div>
-            <div class="dropdown">
-              <div class="dropdown-active">
-                <div class="dropdown-title" data-name="">select</div>
-                <span class="dropdown-icon down"></span>
-              </div>
-              <div class="dropdown-items">
-                <div class="dropdown-list">
-                  <div>Select</div>
-                  <div>Arial</div>
-                  <div>Monaco</div>
-                  <div>Hack</div>
-                  <div>Futura</div>
-                  <div>Helvetica</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="table-row">
-          <div>Border Color</div>
-          <div>
-            <div class="checkbox alone">
-              <input id="c11" type="checkbox" checked>
-              <label for="c11">Enabled</label>
-            </div>
-          </div>
-          <div>
-            <div class="input">
-              <input name="border-color" class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
-              <span></span>
-              <div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="table-row">
-          <div>Border Size</div>
-          <div>
-            <div class="checkbox alone">
-              <input id="c11" type="checkbox" checked>
-              <label for="c11">Enabled</label>
-            </div>
-          </div>
-          <div>
-            <div class="input">
-              <input name="border-size" class="input-number" type="text" pattern="\\d{4}" maxlength="4">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="table-row">
-          <div>Background Color</div>
-          <div>
-            <div class="checkbox alone">
-              <input id="c11" type="checkbox" checked>
-              <label for="c11">Enabled</label>
-            </div>
-          </div>
-          <div>
-            <div class="input">
-              <input name="bg-color" class="input-hex" type="text" pattern="\\d{6}" maxlength="6" placeholder="color">
-              <span></span>
-              <div></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+    <div class="input-text small">
+      <input type="text" maxlength="2" placeholder="BL">
+      <span></span>
     </div>
-
-    <!-- <div class="widget-settings-right">
-      <div class="textarea">
-        <span>Custom CSS</span>
-        <textarea></textarea>
-      </div>
-    </div> -->
-
+    <div class="input-text small">
+      <input type="text" maxlength="2" placeholder="BR">
+      <span></span>
+    </div>
   </div>
 </div>
 `;
 
-const state = {
-  display: true,
-  position: {
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-};
+const settings = 'settings';
+const state = {};
+const start = () => {};
 
 const Battery = new Widget(
   name,
@@ -229,6 +168,7 @@ const Battery = new Widget(
   options,
   settings,
   state,
+  start,
 );
 
 module.exports = Battery;

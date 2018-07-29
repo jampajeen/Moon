@@ -2,12 +2,13 @@ const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'applications';
-const icon = feather.icons.menu.toSvg({ width: 10, height: 10 });
+const icon = feather.icons.sliders.toSvg();
 const description = 'Shortcut to launch an application.';
 
 const settings = '';
 const options = '';
 const state = {};
+const start = () => {};
 
 const Applications = new Widget(
   name,
@@ -16,6 +17,7 @@ const Applications = new Widget(
   options,
   settings,
   state,
+  start,
 );
 
 module.exports = Applications;

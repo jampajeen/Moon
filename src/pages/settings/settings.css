@@ -6,6 +6,8 @@
   --gray-1: #fafafa;
   --gray-2: #ddd;
   --gray-3: #bbb;
+  --accent: #f5eee6;
+  --accent-2: #f3d7ca;
   --time: 200ms;
 }
 
@@ -30,7 +32,8 @@
   transition: color var(--time);
 }
 
-.hide {
+.hide,
+.dock-hide {
   visibility: hidden;
 }
 
@@ -40,7 +43,7 @@
   width: 100vw;
   min-height: 100vh;
   min-width: 100vw;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "SF UI Text", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   display: grid;
   grid-template-columns: 130px 1fr 220px;
   grid-template-rows: 1fr;
@@ -78,7 +81,7 @@ aside > div {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  transition: all var(--time);
+  transition: width var(--time);
 }
 
 aside > div:hover .title::after {
@@ -108,6 +111,11 @@ aside > div:hover .title::after {
 
 .active::after {
   width: 100%;
+}
+
+.icon > svg {
+  width: 10px;
+  height: 10px;
 }
 
 /* ⬡ MAIN */
@@ -155,12 +163,13 @@ main {
   font-weight: bold;
 }
 
-.dock {
+.dock,
+.dock-center {
   width: 100%;
   height: 100%;
   background: none;
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row;
   justify-content: center;
   align-items: flex-end;
 }
@@ -173,125 +182,26 @@ main {
   background-color: var(--fg);
 }
 
-/* ⬢ WIDGET SETTINGS */
-
-.settings {
-  height: 100%;
-  width: 100%;
+.dock-left {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
-}
-
-.widget-preview {
-  height: 30%;
-  width: 100%;
-  border-bottom: 1px solid var(--gray-2);
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.widget-preview > div {
-  color: var(--bg);
-  background: var(--fg);
-  width: 50px;
-  height: 30px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-  font-weight: 300;
-  text-transform: uppercase;
+.dock-left > div {
+  margin: 0 0 3px 8px;
 }
 
-.widget-title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.widget-title > h1 {
-  margin: 0;
-}
-
-.widget-title .checkbox {
-  margin: 7px 0 0 30px;
-}
-
-.widget-settings {
-  margin-top: 20px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.widget-settings-left,
-.widget-settings-right {
-  width: 50%;
-}
-
-.widget-settings-left {
-  margin-right: 10px;
+.dock-right {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  overflow: auto;
-}
-
-.widget-settings-right {
-  margin-left: 10px;
-}
-
-.table {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-
-.table-row {
-  height: 20px;
-  margin: 5px 0;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.table-row > div {
-  flex-grow: 2;
-  flex-basis: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 10px;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.table-row > div:first-child {
-  justify-content: flex-start;
-}
-
-.table-row > div:nth-child(2) {
-  justify-content: center;
-}
-
-.table-row > div:nth-child(3) {
-  justify-content: flex-end;
-}
-
-.header {
-  font-weight: bold;
+.dock-right > div {
+  margin: 0 8px 3px 0;
 }
 
 /* ⬡ FOOTER */
@@ -317,6 +227,19 @@ footer {
   align-items: center;
 }
 
+.section-title {
+  height: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--gray-3);
+}
+
 .hr {
   height: 1px;
   background: var(--gray-2);
@@ -332,4 +255,11 @@ footer {
   font-size: 12px;
   font-weight: 300;
   color: var(--fg);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }

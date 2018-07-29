@@ -1,4 +1,4 @@
-const template = require('./template.js');
+const { template, activate } = require('./helpers.js');
 const registerListeners = require('./input.js');
 
 const aside = document.querySelector('aside');
@@ -7,24 +7,15 @@ const footer = document.querySelector('footer');
 
 let active = '';
 
-function activate(div) {
-  document.querySelectorAll('.active').forEach((el) => { el.classList.remove('active'); });
-  div.classList.add('active');
-}
-
 class Widget {
-  constructor(name, icon, description, options, settings, state) {
+  constructor(name, icon, description, options, settings, state, start) {
     this.name = name;
     this.icon = icon;
     this.description = description;
     this.options = options;
     this.settings = settings;
     this.state = state;
-
-    // Set default tab to active
-    if (this.state.default === true) {
-      active = this.name;
-    }
+    this.start = start;
 
     this.init();
   }
@@ -42,23 +33,21 @@ class Widget {
 
     div.addEventListener('click', () => {
       if (active !== this.name) {
-        activate(div.children[1]);
+        activate(div.children[1], 'active');
         main.innerHTML = this.settings;
         footer.innerHTML = this.options;
+        active = this.name;
+
+        // Register general listeners
         registerListeners();
 
-        active = this.name;
+        // Start widget specific code
+        this.start();
       }
     });
 
-    if (this.state.default === true) {
-      activate(div.children[1]);
-      main.innerHTML = this.settings;
-      footer.innerHTML = this.options;
-      registerListeners();
-
-      active = this.name;
-    }
+    // Trigger click event on default widget
+    if (this.state.default === true) div.click();
   }
 }
 

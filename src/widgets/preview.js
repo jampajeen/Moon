@@ -1,8 +1,9 @@
 const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
+const { activate, toggle } = require('../lib/helpers.js');
 
 const name = 'preview';
-const icon = feather.icons.moon.toSvg({ width: 10, height: 10 });
+const icon = feather.icons.moon.toSvg();
 const description = 'Preview your current bar.';
 
 const settings = `
@@ -11,7 +12,7 @@ const settings = `
     <span></span>
     <div>Moon Preview</div>
   </div>
-  <div class="dock">
+  <div class="dock dock-center">
     <div></div>
     <div></div>
     <div></div>
@@ -22,48 +23,62 @@ const settings = `
 `;
 
 const options = `
-  <div class="section">
-    <div>
-      <div class="section-title">Preview</div>
-      <div class="section-content column flex-start">
-        <div class="checkbox">
-          <input id="menu-bar-c" type="checkbox" checked>
-          <label for="menu-bar-c">Menu Bar</label>
-        </div>
-        <div class="checkbox">
-          <input id="dock-c" type="checkbox" checked>
-          <label for="dock-c">Dock</label>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="section">
-    <div>
-      <div class="section-title">Bar</div>
-      <div class="section-content column">
-        <div class="checkbox">
-          <input id="bar-c" type="checkbox" checked>
-          <label for="bar-c">Display</label>
-        </div>
-        <div class="button save-button">Update</div>
-      </div>
+<div class="section">
+  <div class="label">Menu Bar</div>
+  <div class="content">
+    <div class="checkbox">
+      <input id="menu-bar-c" type="checkbox" checked>
+      <label for="menu-bar-c">
+        <span>Display</span>
+      </label>
     </div>
   </div>
+</div>
 
-  <div class="section">
-    <div>
-      <div class="section-title">File</div>
-      <div class="section-content column">
-        <div class="button save-button">Import</div>
-        <div class="button preview-button">Export</div>
+<div class="section">
+  <div class="label">Dock</div>
+  <div class="content">
+    <div class="segmented-control dock-select">
+      <div title="Align Dock left" data-name="left">
+        ${feather.icons['align-left'].toSvg()}
+      </div>
+      <div title="Align Dock Center" class="selected" data-name="center">
+        ${feather.icons['align-center'].toSvg()}
+      </div>
+      <div title="Align Dock Right" data-name="right">
+        ${feather.icons['align-right'].toSvg()}
+      </div>
+      <div title="Hide Dock" data-name="hide">
+        ${feather.icons['eye-off'].toSvg({ width: 5, height: 5 })}
       </div>
     </div>
   </div>
+</div>
 `;
 
 const state = {
-  // default: true,
+  default: true,
+};
+
+const start = () => {
+  // Show and Hide Menu Bar
+  const menu = document.querySelector('#menu-bar-c');
+  if (menu) {
+    menu.addEventListener('click', () => {
+      toggle(document.querySelector('.menu-bar'), 'hide');
+    });
+  }
+
+  const dock = document.querySelector('.dock');
+  const controls = document.querySelectorAll('.segmented-control > div');
+  controls.forEach((button) => {
+    button.addEventListener('click', () => {
+      dock.classList.remove(`dock-${document.querySelector('.selected').getAttribute('data-name')}`);
+      dock.classList.add(`dock-${button.getAttribute('data-name')}`);
+      activate(button, 'selected');
+    });
+  });
 };
 
 const Preview = new Widget(
@@ -73,5 +88,6 @@ const Preview = new Widget(
   options,
   settings,
   state,
+  start,
 );
 module.exports = Preview;

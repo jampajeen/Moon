@@ -1,19 +1,21 @@
-.align-buttons {
+.segmented-control {
   flex-basis: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  border: 1px solid var(--gray-2);
+  background: var(--white);
   border-radius: 3px;
+  border: 1px solid var(--gray-2);
   height: 25px;
 }
 
-.align-buttons:hover {
+.segmented-control:hover {
   cursor: pointer;
 }
 
-.align-buttons > div {
+.segmented-control > div {
+  color: var(--gray-2);
   flex-basis: 0;
   flex-grow: 1;
   display: flex;
@@ -22,19 +24,22 @@
   align-items: center;
 }
 
-.align-buttons > div:active {
+.segmented-control > div:active {
   background: var(--gray-1);
 }
 
-.align-buttons > div.selected > svg {
+.segmented-control > div.selected > svg {
   color: var(--fg);
 }
 
-.align-buttons > div > svg {
+.segmented-control > div > svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 1px;
   transition: color var(--time);
 }
 
-.align-buttons > div:hover > svg {
+.segmented-control > div:hover > svg {
   color: var(--fg);
   transition: color var(--time);
 }

@@ -2,12 +2,13 @@ const feather = require('feather-icons');
 const Widget = require('../lib/widget.js');
 
 const name = 'power';
-const icon = feather.icons.power.toSvg({ width: 10, height: 10 });
+const icon = feather.icons.power.toSvg();
 const description = 'Put your computer to sleep.';
 
 const settings = '';
 const options = '';
 const state = {};
+const start = () => {};
 
 const Power = new Widget(
   name,
@@ -16,6 +17,7 @@ const Power = new Widget(
   options,
   settings,
   state,
+  start,
 );
 
 module.exports = Power;

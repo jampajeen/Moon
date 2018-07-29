@@ -1,15 +1,5 @@
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.content > div {
-  background: var(--white);
-}
-
 .input-text {
+  background: var(--white);
   position: relative;
   width: 60px;
 }
@@ -29,7 +19,7 @@
 }
 
 .input-text > input {
-  font-family: "SF Mono", monospace;
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
   background: none;
   color: var(--fg);
   border: 1px solid var(--gray-2);

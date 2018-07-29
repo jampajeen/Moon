@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../../css/reset.css">
     <!-- <link rel="stylesheet" href="../../css/components.css"> -->
     <link rel="stylesheet" href="../../css/input.css">
-    <link rel="stylesheet" href="../../css/align.css">
+    <link rel="stylesheet" href="../../css/segmented.css">
     <link rel="stylesheet" href="../../css/dropdown.css">
     <link rel="stylesheet" href="../../css/button.css">
+    <link rel="stylesheet" href="../../css/checkbox.css">
     <link rel="stylesheet" href="./settings.css">
   </head>
   <body>
@@ -20,147 +21,14 @@
 
       <main></main>
 
-      <footer>
-
-        <div class="section">
-          <div class="label">Position</div>
-          <div class="content">
-            <div class="input-text">
-              <input type="text" maxlength="4">
-              <span>X</span>
-            </div>
-            <div class="input-text">
-              <input type="text" maxlength="4">
-              <span>Y</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="label">Size</div>
-          <div class="content">
-            <div class="input-text">
-              <input type="text" maxlength="4">
-              <span>W</span>
-            </div>
-            <div class="input-text">
-              <input type="text" maxlength="4">
-              <span>H</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="hr"></div>
-        </div>
-
-        <div class="section">
-          <div class="label">Typeface</div>
-          <div class="content">
-            <div class="dropdown">
-              <select>
-                <option value="one">San Francisco</option>
-                <option value="two">Hack</option>
-                <option value="three">Arial</option>
-                <option value="three">Arial</option>
-                <option value="three">Arial</option>
-                <option value="three">Arial</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="label">Align</div>
-          <div class="content">
-            <div class="align-buttons">
-              <div class="align-left">
-                <i data-feather="align-left"></i>
-              </div>
-              <div class="align-center selected">
-                <i data-feather="align-center"></i>
-              </div>
-              <div class="align-right">
-                <i data-feather="align-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="label">Font</div>
-          <div class="content">
-            <div class="input-text">
-              <input type="text" maxlength="4">
-              <span>PX</span>
-            </div>
-            <div class="input-text">
-              <input type="text" maxlength="6">
-              <span>#</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="hr"></div>
-        </div>
-
-        <div class="section">
-          <div class="label">Border</div>
-          <div class="content">
-            <div class="input-text">
-              <input type="text" maxlength="4">
-              <span>PX</span>
-            </div>
-            <div class="input-text">
-              <input type="text" maxlength="6">
-              <span>#</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="label">Radius</div>
-          <div class="content">
-            <div class="input-text small">
-              <input type="text" maxlength="2" placeholder="TL">
-              <span></span>
-            </div>
-            <div class="input-text small">
-              <input type="text" maxlength="2" placeholder="TR">
-              <span></span>
-            </div>
-            <div class="input-text small">
-              <input type="text" maxlength="2" placeholder="BL">
-              <span></span>
-            </div>
-            <div class="input-text small">
-              <input type="text" maxlength="2" placeholder="BR">
-              <span></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <div class="hr"></div>
-        </div>
-
-        <div class="section">
-          <button type="button" name="button" id="t">Toggle</button>
-        </div>
-
-
-      </footer>
+      <footer></footer>
     </div>
 
     <!-- Scripts -->
     <script type="text/javascript" src="./settings.js"></script>
-    <script type="text/javascript" src="../../../node_modules/feather-icons/dist/feather.min.js"></script>
+    <!-- <script type="text/javascript" src="../../../node_modules/feather-icons/dist/feather.min.js"></script>
     <script type="text/javascript">
-      feather.replace({ height: 15, width: 15, 'stroke-width': 1, color: 'var(--gray-2)' });
-      document.querySelector('#t').addEventListener('click', () => {
-        document.querySelector('.wrapper').classList.toggle('dark');
-      })
-    </script>
+      feather.replace();
+    </script> -->
   </body>
 </html>
