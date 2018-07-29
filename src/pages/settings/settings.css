@@ -67,7 +67,7 @@ aside:hover {
   cursor: pointer;
 }
 
-aside > div {
+.widget {
   -webkit-app-region: no-drag;
   word-wrap: break-word;
   font-size: 12px;
@@ -85,7 +85,7 @@ aside > div {
   transition: width var(--time);
 }
 
-aside > div:hover .title::after {
+.widget:hover .title::after {
   width: 100%;
   transition: width var(--time);
 }
@@ -257,6 +257,7 @@ footer {
   flex-basis: 70px;
   font-size: 12px;
   font-weight: 300;
+  text-transform: capitalize;
   color: var(--fg);
 }
 
@@ -265,4 +266,19 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.options {
+  pointer-events: all;
+  transition: opacity var(--time);
+}
+
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity var(--time);
+}
+
+.gray {
+  opacity: 0.3;
 }

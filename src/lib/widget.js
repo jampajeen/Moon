@@ -22,7 +22,7 @@ class Widget {
 
   init() {
     const html = `
-      <div>
+      <div class="widget">
         <div class="icon">${this.icon}</div>
         <div class="title">${this.name}</div>
       </div>

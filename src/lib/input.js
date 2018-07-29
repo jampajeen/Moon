@@ -1,6 +1,6 @@
 const registerListeners = () => {
   // Number inputs
-  const numInputs = document.querySelectorAll('.input-number');
+  const numInputs = document.querySelectorAll('.input-text');
   numInputs.forEach((input) => {
     input.addEventListener('keydown', (e) => {
       const v = parseInt(String.fromCharCode(e.keyCode), 10);
@@ -25,6 +25,23 @@ const registerListeners = () => {
       }
     });
   });
+
+  // Widget display checkbox
+  const display = document.querySelector('.display-checkbox');
+  if (display) {
+    display.addEventListener('change', (e) => {
+      const o = document.querySelector('.options');
+      const x = o.querySelectorAll('input, select');
+      o.classList.toggle('disabled');
+      if (!e.target.checked) {
+        x.forEach((el) => { el.disabled = true; });
+        // Dim the widget in the sidebar
+        document.querySelector('.active').closest('.widget').classList.toggle('gray');
+      } else {
+        x.forEach((el) => { el.disabled = false; });
+      }
+    });
+  }
 };
 
 module.exports = registerListeners;
