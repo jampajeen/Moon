@@ -1,6 +1,6 @@
 # M☾☾N
 
-Beautiful, customizable menu bars for macOS. Runs as a standalone application without the need for supporting applications like Ubersicht.
+Create beautiful, customizable menu bar and dock replacements for macOS.
 
 ![](screenshot.png)
 
