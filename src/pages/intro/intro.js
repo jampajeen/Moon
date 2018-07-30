@@ -5,7 +5,7 @@ const buttons = document.querySelectorAll('.progress > div');
 const finish = document.querySelector('.finish');
 
 buttons.forEach((button) => {
-  button.addEventListener('click', () => {
+  button.onclick = () => {
     const activeIndex = parseInt(document.querySelector('.active-button').getAttribute('data-page'), 10);
     const clickedIndex = parseInt(button.getAttribute('data-page'), 10);
     let newIndex;
@@ -21,9 +21,9 @@ buttons.forEach((button) => {
     pages[newIndex].style.left = '0';
     buttons[activeIndex].classList.remove('active-button');
     buttons[newIndex].classList.add('active-button');
-  });
+  };
 });
 
-finish.addEventListener('click', () => {
+finish.onclick = () => {
   ipcRenderer.send('doneIntroduction');
-});
+};

@@ -144,9 +144,9 @@ const state = {};
 const start = () => {
   const controls = document.querySelectorAll('.segmented-control > div');
   controls.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.onclick = () => {
       activate(button, 'selected');
-    });
+    };
   });
 };
 

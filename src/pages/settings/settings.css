@@ -215,8 +215,6 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  padding: 20px 10px;
-  overflow: auto;
   border-left: 1px solid var(--gray-2);
 }
 

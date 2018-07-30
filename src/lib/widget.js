@@ -31,7 +31,7 @@ class Widget {
     const div = template(html);
     aside.appendChild(div);
 
-    div.addEventListener('click', () => {
+    div.onclick = () => {
       if (active !== this.name) {
         activate(div.children[1], 'active');
         main.innerHTML = this.settings;
@@ -44,7 +44,7 @@ class Widget {
         // Start widget specific code
         this.start();
       }
-    });
+    };
 
     // Trigger click event on default widget
     if (this.state.default === true) div.click();

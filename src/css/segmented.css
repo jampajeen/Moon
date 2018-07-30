@@ -28,18 +28,18 @@
   background: var(--gray-1);
 }
 
-.segmented-control > div.selected > svg {
+.segmented-control > div.selected > * {
   color: var(--fg);
 }
 
-.segmented-control > div > svg {
+.segmented-control > div > * {
   width: 15px;
   height: 15px;
   stroke-width: 1px;
   transition: color var(--time);
 }
 
-.segmented-control > div:hover > svg {
+.segmented-control > div:hover > * {
   color: var(--fg);
   transition: color var(--time);
 }

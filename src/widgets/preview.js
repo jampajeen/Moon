@@ -58,26 +58,26 @@ const options = `
 `;
 
 const state = {
-  default: true,
+  // default: true,
 };
 
 const start = () => {
   // Show and Hide Menu Bar
   const menu = document.querySelector('#menu-bar-c');
   if (menu) {
-    menu.addEventListener('click', () => {
+    menu.onclick = () => {
       toggle(document.querySelector('.menu-bar'), 'hide');
-    });
+    };
   }
 
   const dock = document.querySelector('.dock');
   const controls = document.querySelectorAll('.segmented-control > div');
   controls.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.onclick = () => {
       dock.classList.remove(`dock-${document.querySelector('.selected').getAttribute('data-name')}`);
       dock.classList.add(`dock-${button.getAttribute('data-name')}`);
       activate(button, 'selected');
-    });
+    };
   });
 };
 
