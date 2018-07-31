@@ -5,9 +5,12 @@ const name = 'music';
 const icon = feather.icons.music.toSvg();
 const description = 'Display the current song from iTunes or Spotify.';
 
-const settings = '';
-const options = '';
-const state = {};
+const settings = () => '<span>settings</span>';
+const options = () => '<span>options</span>';
+const state = {
+  display: true,
+};
+
 const start = () => {};
 
 const Music = new Widget(

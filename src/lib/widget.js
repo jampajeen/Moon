@@ -22,10 +22,10 @@ class Widget {
 
   init() {
     const html = `
-      <div class="widget">
-        <div class="icon">${this.icon}</div>
-        <div class="title">${this.name}</div>
-      </div>
+    <div class="widget${this.state.display ? '' : ' gray'}">
+      <div class="icon">${this.icon}</div>
+      <div class="title">${this.name}</div>
+    </div>
     `;
 
     const div = template(html);
@@ -33,10 +33,14 @@ class Widget {
 
     div.onclick = () => {
       if (active !== this.name) {
+        // Activate the clicked widget
         activate(div.children[1], 'active');
-        main.innerHTML = this.settings;
-        footer.innerHTML = this.options;
         active = this.name;
+
+        // Load the new widget
+        main.innerHTML = ''; footer.innerHTML = '';
+        main.appendChild(template(this.settings()));
+        footer.appendChild(template(this.options()));
 
         // Register general listeners
         registerListeners();

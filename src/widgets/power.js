@@ -5,9 +5,12 @@ const name = 'power';
 const icon = feather.icons.power.toSvg();
 const description = 'Put your computer to sleep.';
 
-const settings = '';
-const options = '';
-const state = {};
+const settings = () => '<span>settings</span>';
+const options = () => '<span>options</span>';
+const state = {
+  display: true,
+};
+
 const start = () => {};
 
 const Power = new Widget(

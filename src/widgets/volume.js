@@ -5,9 +5,11 @@ const name = 'volume';
 const icon = feather.icons['volume-2'].toSvg();
 const description = 'Display the volume level.';
 
-const settings = '';
-const options = '';
-const state = {};
+const settings = () => '<span>settings</span>';
+const options = () => '<span>options</span>';
+const state = {
+  display: true,
+};
 const start = () => {};
 
 const Volume = new Widget(

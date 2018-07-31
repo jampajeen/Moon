@@ -82,7 +82,7 @@ aside:hover {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  transition: width var(--time);
+  transition: opacity var(--time), width var(--time);
 }
 
 .widget:hover .title::after {
@@ -215,6 +215,8 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  padding: 20px 10px;
+  overflow: auto;
   border-left: 1px solid var(--gray-2);
 }
 
@@ -279,4 +281,5 @@ footer {
 
 .gray {
   opacity: 0.3;
+  transition: opacity var(--time);
 }

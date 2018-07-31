@@ -32,13 +32,14 @@ const registerListeners = () => {
     display.addEventListener('change', (e) => {
       const o = document.querySelector('.options');
       const x = o.querySelectorAll('input, select');
-      o.classList.toggle('disabled');
-      if (!e.target.checked) {
+      if (e.target.checked === false) {
         x.forEach((el) => { el.disabled = true; });
-        // Dim the widget in the sidebar
-        document.querySelector('.active').closest('.widget').classList.toggle('gray');
+        o.classList.add('disabled');
+        document.querySelector('.active').closest('.widget').classList.add('gray');
       } else {
         x.forEach((el) => { el.disabled = false; });
+        o.classList.remove('disabled');
+        document.querySelector('.active').closest('.widget').classList.remove('gray');
       }
     });
   }

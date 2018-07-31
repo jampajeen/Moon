@@ -5,9 +5,12 @@ const name = 'CPU';
 const icon = feather.icons.cpu.toSvg();
 const description = 'Display current CPU usage.';
 
-const settings = '';
-const options = '';
-const state = {};
+const settings = () => '<span>settings</span>';
+const options = () => '<span>options</span>';
+const state = {
+  display: true,
+};
+
 const start = () => {};
 
 const CPU = new Widget(

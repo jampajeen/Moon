@@ -5,9 +5,12 @@ const name = 'screen';
 const icon = feather.icons.monitor.toSvg();
 const description = 'Display the current workspace or display.';
 
-const settings = '';
-const options = '';
-const state = {};
+const settings = () => '<span>settings</span>';
+const options = () => '<span>options</span>';
+const state = {
+  display: true,
+};
+
 const start = () => {};
 
 const Screen = new Widget(

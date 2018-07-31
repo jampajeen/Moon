@@ -5,9 +5,12 @@ const name = 'date';
 const icon = feather.icons.calendar.toSvg();
 const description = 'Display the current date and time.';
 
-const settings = '';
-const options = '';
-const state = {};
+const settings = () => '<span>settings</span>';
+const options = () => '<span>options</span>';
+const state = {
+  display: true,
+};
+
 const start = () => {};
 
 const Date = new Widget(

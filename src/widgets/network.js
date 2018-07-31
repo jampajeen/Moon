@@ -5,9 +5,12 @@ const name = 'network';
 const icon = feather.icons.wifi.toSvg();
 const description = 'Display network connectivity.';
 
-const settings = '';
-const options = '';
-const state = {};
+const settings = () => '<span>settings</span>';
+const options = () => '<span>options</span>';
+const state = {
+  display: true,
+};
+
 const start = () => {};
 
 const Network = new Widget(
