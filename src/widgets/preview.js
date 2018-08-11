@@ -7,19 +7,17 @@ const icon = feather.icons.moon.toSvg();
 const description = 'Preview your current bar.';
 
 const settings = () => `
-<div>
-  <div class="screen">
-    <div class="menu-bar">
-      <span></span>
-      <div>Moon Preview</div>
-    </div>
-    <div class="dock dock-center">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+<div class="screen">
+  <div class="menu-bar">
+    <span></span>
+    <div>Moon Preview</div>
+  </div>
+  <div class="dock dock-center">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 </div>
 `;

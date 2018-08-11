@@ -70,11 +70,23 @@ const options = () => `
       <div class="label">Position</div>
       <div class="content">
         <div class="input-text" title="Position on X axis">
-          <input type="text" maxlength="4" data-key="position.x" value="${state.position.x}">
+          <input
+            type="text"
+            maxlength="4"
+            data-key="position.x"
+            value="${state.position.x}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>X</span>
         </div>
         <div class="input-text" title="Position on Y axis">
-          <input type="text" maxlength="4" data-key="position.y" value="${state.position.y}">
+          <input
+            type="text"
+            maxlength="4"
+            data-key="position.y"
+            value="${state.position.y}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>Y</span>
         </div>
       </div>
@@ -84,11 +96,23 @@ const options = () => `
       <div class="label">Size</div>
       <div class="content">
         <div class="input-text" title="Widget Width">
-          <input type="text" maxlength="4" data-key="size.width" value="${state.size.width}">
+          <input
+            type="text"
+            maxlength="4"
+            data-key="size.width"
+            value="${state.size.width}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>W</span>
         </div>
         <div class="input-text" title="Widget Height">
-          <input type="text" maxlength="4" data-key="size.height" value="${state.size.height}">
+          <input
+            type="text"
+            maxlength="4"
+            data-key="size.height"
+            value="${state.size.height}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>H</span>
         </div>
       </div>
@@ -98,11 +122,23 @@ const options = () => `
       <div class="label">Fill</div>
       <div class="content">
         <div class="input-text" title="Background Color">
-          <input type="text" maxlength="6" data-key="fill.color" value="${state.fill.color}">
+          <input
+            type="text"
+            maxlength="6"
+            data-key="fill.color"
+            value="${state.fill.color}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>#</span>
         </div>
         <div class="input-text" title="Background Opacity">
-          <input type="text" maxlength="6" data-key="fill.opacity" value="${state.fill.opacity}">
+          <input
+            type="text"
+            maxlength="6"
+            data-key="fill.opacity"
+            value="${state.fill.opacity}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>%</span>
         </div>
       </div>
@@ -116,7 +152,7 @@ const options = () => `
       <div class="label">Typeface</div>
       <div class="content">
         <div class="dropdown" title="Font Name">
-          <select>
+          <select ${state.display ? '' : 'disabled'}>
             <option value="one">San Francisco</option>
             <option value="two">Hack</option>
             <option value="three">Arial</option>
@@ -149,11 +185,23 @@ const options = () => `
       <div class="label">Font</div>
       <div class="content">
         <div class="input-text" title="Font Size">
-          <input type="text" maxlength="4" data-key="font.size" value="${state.font.size}">
+          <input
+            type="text"
+            maxlength="4"
+            data-key="font.size"
+            value="${state.font.size}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>PX</span>
         </div>
         <div class="input-text" title="Font Color">
-          <input type="text" maxlength="6" data-key="font.color" value="${state.font.color}">
+          <input
+            type="text"
+            maxlength="6"
+            data-key="font.color"
+            value="${state.font.color}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>#</span>
         </div>
       </div>
@@ -167,11 +215,23 @@ const options = () => `
       <div class="label">Border</div>
       <div class="content">
         <div class="input-text" title="Border Size">
-          <input type="text" maxlength="4" data-key="border.size" value="${state.border.size}">
+          <input
+            type="text"
+            maxlength="4"
+            data-key="border.size"
+            value="${state.border.size}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>PX</span>
         </div>
         <div class="input-text" title="Border Color">
-          <input type="text" maxlength="6" data-key="border.color" value="${state.border.color}">
+          <input
+            type="text"
+            maxlength="6"
+            data-key="border.color"
+            value="${state.border.color}"
+            ${state.display ? '' : 'disabled'}
+          >
           <span>#</span>
         </div>
       </div>
