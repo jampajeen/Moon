@@ -8,8 +8,6 @@ const icon = feather.icons.battery.toSvg();
 const description = 'Display your computer\'s battery level.';
 
 const state = {
-  test: true,
-  default: true,
   display: true,
   position: {
     x: '',
@@ -42,7 +40,6 @@ const state = {
 };
 
 function c() {
-  console.log('c');
   state.display = !state.display;
 }
 
