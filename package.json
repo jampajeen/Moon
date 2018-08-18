@@ -4,7 +4,9 @@
   "description": "beautiful menu bars for macOS",
   "main": "./src/index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "lint": "eslint --ignore-path .gitignore .",
+    "fix": "eslint --ignore-path .gitignore --fix ."
   },
   "author": "Paco Coursey <paco@pacocoursey.com> (pacocoursey.com)",
   "repository": "pacocoursey/moon",
@@ -12,9 +14,13 @@
   "dependencies": {
     "feather-icons": "^4.7.3",
     "fs-extra": "^7.0.0",
-    "lodash.set": "^4.3.2"
+    "lodash.set": "^4.3.2",
+    "npm": "^6.4.0"
   },
   "devDependencies": {
-    "electron": "^2.0.2"
+    "electron": "^2.0.2",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }
