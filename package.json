@@ -18,7 +18,7 @@
     "npm": "^6.4.0"
   },
   "devDependencies": {
-    "electron": "^2.0.2",
+    "electron": "^2.0.8",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
