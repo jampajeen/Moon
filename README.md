@@ -56,9 +56,3 @@ Keep in mind this project is still under development.
 * [ ] Font size & color
 * [ ] Border (+color, +size)
 * [ ] Icon (true/false, custom)
-
-#
-
-<p align="center">
-  <a href="http://paco.sh"><img src="https://raw.githubusercontent.com/pacocoursey/pacocoursey.github.io/master/footer.png" height="300"></a>
-</p>
