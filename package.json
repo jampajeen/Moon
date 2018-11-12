@@ -8,7 +8,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "fix": "eslint --ignore-path .gitignore --fix ."
   },
-  "author": "Paco Coursey <paco@pacocoursey.com> (pacocoursey.com)",
+  "author": "Paco Coursey",
   "repository": "pacocoursey/moon",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +18,7 @@
     "npm": "^6.4.0"
   },
   "devDependencies": {
-    "electron": "^2.0.8",
+    "electron": "3.0.8",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
